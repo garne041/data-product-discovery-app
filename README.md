@@ -634,5 +634,5 @@ print(response)
 
 ---
 
-**Last Updated:** 2025-01-XX  
-**Maintained By:** [Your Team Name]
+**Last Updated:** 2025-01-16  
+**Maintained By:** Joy Garnett (joy.garnett@databricks.com or garne041@gmail.com) and Anjana Sriram (anjana.sriram@databricks.com)
