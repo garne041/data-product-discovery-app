@@ -627,11 +627,6 @@ print(response)
 * **Model Serving**: Databricks service for deploying ML models as REST APIs
 * **Lakehouse App**: Databricks Apps for deploying interactive applications
 
-### Version History
-
-* **v1.0.0** (2025-01-XX): Initial release with data discovery and access request features
-* **v0.9.0** (2024-12-XX): Beta release for internal testing
-
 ---
 
 **Last Updated:** 2025-01-16  
