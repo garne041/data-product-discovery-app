@@ -40,6 +40,10 @@ assert SERVING_ENDPOINT, \
      "deploying to a Databricks app, include a serving endpoint resource named "
      "'serving_endpoint' with CAN_QUERY permissions.")
 
+# Get catalog and schema from environment variables for access requests
+ACCESS_REQUEST_CATALOG = os.getenv('ACCESS_REQUEST_CATALOG', 'fnma_product_catalog_jcg')
+ACCESS_REQUEST_SCHEMA = os.getenv('ACCESS_REQUEST_SCHEMA', 'default')
+
 # Check if the endpoint is supported
 endpoint_supported = is_endpoint_supported(SERVING_ENDPOINT)
 
@@ -568,10 +572,13 @@ def request_access_api(data_product_name):
         workspace_url = cfg.host
         token = st.context.headers.get('X-Forwarded-Access-Token')
 
+        # Build full_name from environment variables
+        full_name = f"{ACCESS_REQUEST_CATALOG}.{ACCESS_REQUEST_SCHEMA}"
+
         payload = {
                 "comment": "Requesting USE_SCHEMA permission",
                 "securable": {
-                    "full_name": "bircatalog.birschema",
+                    "full_name": full_name,
                     "type": "SCHEMA"
                 },
                 "privileges": "USE_SCHEMA,SELECT"
