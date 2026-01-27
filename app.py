@@ -41,7 +41,7 @@ assert SERVING_ENDPOINT, \
      "'serving_endpoint' with CAN_QUERY permissions.")
 
 # Get catalog and schema from environment variables for access requests
-ACCESS_REQUEST_CATALOG = os.getenv('ACCESS_REQUEST_CATALOG', 'fnma_product_catalog_jcg')
+ACCESS_REQUEST_CATALOG = os.getenv('ACCESS_REQUEST_CATALOG', 'fnma_product_catalog')
 ACCESS_REQUEST_SCHEMA = os.getenv('ACCESS_REQUEST_SCHEMA', 'default')
 
 # Check if the endpoint is supported
